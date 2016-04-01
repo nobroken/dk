@@ -8,10 +8,10 @@
 </h:head>
 <h:body>
 <h:form>
-	<h:outputText id="test" value="#{language.localeCode}" />
-	<p:selectOneMenu id="language" value="#{language.localeCode}">
+	<h:outputText id="test" value="#{label.loginName}" />
+	<p:selectOneMenu id="language" value="#{language.language}">
 		<p:ajax event="change" listener="#{language.handleChange}" update="test" />
-		<f:selectItems value="#{language.localeCodes}" />
+		<f:selectItems value="#{language.languages}" />
 	</p:selectOneMenu>
 	</h:form>
 </h:body>

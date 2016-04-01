@@ -1,40 +1,47 @@
 package dattran.dk.web.bean;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean(name = "language")
 @SessionScoped
 public class LanguageBean implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private String localeCode = "English";
-	private List<String> localeCodes = new ArrayList<String>();
-
-	public String getLocaleCode() {
-		return localeCode;
-	}
+	private static final String VN = "Tiếng Việt";
+	private static Map<String, Locale> languages;
+	private String language;
 
 	@PostConstruct
 	public void init() {
-		localeCodes.add(localeCode);
-		localeCodes.add("VN");
+		languages = new LinkedHashMap<String, Locale>();
+		languages.put(VN, new Locale("vie"));
+		languages.put("English", Locale.ENGLISH);
+		language = VN;
 	}
 
-	public void setLocaleCode(String localeCode) {
-		this.localeCode = localeCode;
+	public String getLanguage() {
+		return language;
 	}
 
-	public List<String> getLocaleCodes() {
-		return localeCodes;
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public Set<String> getLanguages() {
+		return languages.keySet();
 	}
 
 	public void handleChange() {
-		System.out.println("afsdfds:" + localeCode);
+		System.out.println("Lang: " + this.language);
+		FacesContext.getCurrentInstance().getViewRoot().setLocale(languages.get(this.language));
 	}
 
 }
