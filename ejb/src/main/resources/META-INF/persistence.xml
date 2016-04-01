@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="dk-ejb" transaction-type="JTA">
+		<jta-data-source>jdbc/dk</jta-data-source>
+		<class>dattran.dk.domain.entities.RoleEntity</class>
+		<class>dattran.dk.domain.entities.ClassEntity</class>
+		<class>dattran.dk.domain.entities.StudentEntity</class>
+		<class>dattran.dk.domain.entities.ContactEntity</class>
+		<class>dattran.dk.domain.entities.ProfessorEntity</class>
+		<class>dattran.dk.domain.entities.ExamEntity</class>
+		<class>dattran.dk.domain.entities.NoteEntity</class>
+		<class>dattran.dk.domain.entities.PersonEntity</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+		<properties>
+			<property name="eclipselink.target-database" value="PostgreSQL" />
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.cache-statements" value="true" />
+			<property name="eclipselink.jdbc.cache-statements.size"
+				value="100" />
+			<property name="eclipselink.cache.size.default" value="5000" />
+			<property name="eclipselink.logging.level" value="OFF" />
+			<property name="eclipselink.logging.parameters" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="PostgreSQL" id="Project_b12ad1b" html="y" template="Default" database="PostgreSQL" >
+	<schema name="public" catalogname="dk" schemaname="public" >
+		<table name="class" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="managed_by" type="integer" jt="4" />
+			<index name="pk_class" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="idx_class" unique="NORMAL" >
+				<column name="managed_by" />
+			</index>
+			<fk name="fk_class_professor" to_schema="public" to_table="professor" delete_action="setNull" update_action="cascade" >
+				<fk_column name="managed_by" pk="id" />
+			</fk>
+		</table>
+		<table name="contact" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="addresse" type="varchar" length="100" jt="12" />
+			<column name="phone" type="varchar" length="100" jt="12" />
+			<column name="email" type="varchar" length="2147483647" decimal="0" jt="12" />
+			<index name="pk_contact" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="exam" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="professor_id" type="integer" jt="4" />
+			<column name="datum" type="date" jt="91" mandatory="y" />
+			<index name="idx_exam" unique="NORMAL" >
+				<column name="professor_id" />
+			</index>
+			<index name="pk_exam_0" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="pk_exam_0" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_exam_professor" to_schema="public" to_table="professor" delete_action="setNull" update_action="cascade" >
+				<fk_column name="professor_id" pk="id" />
+			</fk>
+		</table>
+		<table name="note" >
+			<column name="note" type="real" length="600" decimal="0" jt="7" mandatory="y" />
+			<column name="comment" type="text" jt="12" />
+			<column name="student_id" type="integer" jt="4" mandatory="y" />
+			<column name="exam_id" type="integer" jt="4" mandatory="y" />
+			<index name="idx_note" unique="NORMAL" >
+				<column name="exam_id" />
+			</index>
+			<index name="idx_note_0" unique="NORMAL" >
+				<column name="student_id" />
+			</index>
+			<fk name="fk_note_exam" to_schema="public" to_table="exam" delete_action="restrict" update_action="cascade" >
+				<fk_column name="exam_id" pk="id" />
+			</fk>
+			<fk name="fk_note_student" to_schema="public" to_table="student" delete_action="restrict" update_action="cascade" >
+				<fk_column name="student_id" pk="id" />
+			</fk>
+		</table>
+		<table name="professor" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="password" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="first_name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="last_name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="email" type="varchar" length="100" jt="12" />
+			<column name="phonne" type="varchar" length="100" jt="12" />
+			<column name="login_name" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="contact_id" type="integer" jt="4" />
+			<index name="pk_professor" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="idx_professor" unique="UNIQUE" >
+				<column name="login_name" />
+			</index>
+			<index name="idx_professor_0" unique="NORMAL" >
+				<column name="contact_id" />
+			</index>
+			<fk name="fk_professor_contact" to_schema="public" to_table="contact" delete_action="cascade" update_action="cascade" >
+				<fk_column name="contact_id" pk="id" />
+			</fk>
+		</table>
+		<table name="professor_role" >
+			<column name="professor_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="role_name" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<index name="pk_professor_role" unique="PRIMARY_KEY" >
+				<column name="professor_id" />
+			</index>
+			<index name="idx_professor_role" unique="NORMAL" >
+				<column name="role_name" />
+			</index>
+			<fk name="fk_professor_role_role" to_schema="public" to_table="role" delete_action="setNull" update_action="cascade" >
+				<fk_column name="role_name" pk="name" />
+			</fk>
+			<fk name="fk_professor_role_professor" to_schema="public" to_table="professor" delete_action="cascade" update_action="cascade" >
+				<fk_column name="professor_id" pk="id" />
+			</fk>
+		</table>
+		<table name="role" >
+			<column name="name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="description" type="text" jt="12" />
+			<index name="pk_role" unique="PRIMARY_KEY" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="student" >
+			<column name="id" type="integer" jt="4" mandatory="y" />
+			<column name="first_name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="last_name" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="phonne" type="varchar" length="100" jt="12" />
+			<column name="class_id" type="integer" jt="4" />
+			<column name="contact_id" type="integer" jt="4" />
+			<index name="pk_professor_0" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="idx_student" unique="NORMAL" >
+				<column name="class_id" />
+			</index>
+			<index name="idx_student_0" unique="NORMAL" >
+				<column name="contact_id" />
+			</index>
+			<fk name="fk_student_class" to_schema="public" to_table="class" delete_action="setNull" update_action="cascade" >
+				<fk_column name="class_id" pk="id" />
+			</fk>
+			<fk name="fk_student_contact" to_schema="public" to_table="contact" delete_action="cascade" update_action="cascade" >
+				<fk_column name="contact_id" pk="id" />
+			</fk>
+		</table>
+		<sequence name="class_id_seq" start="1" />
+		<sequence name="contact_id_seq" start="1" />
+		<sequence name="exam_id_seq" start="1" />
+		<sequence name="person_id_seq" start="1" />
+	</schema>
+	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-9.4-1203.jdbc41.jar" host="localhost" port="5432" instance="dk" user="postgres" passwd="cG9zdGdyZXM=" />
+	<layout id="Layout_8175fae" name="Default" show_relation_columns="y" >
+		<entity schema="public" name="class" color="b7c8e3" x="45" y="60" />
+		<entity schema="public" name="role" color="b7c8e3" x="495" y="510" />
+		<entity schema="public" name="professor_role" color="b7c8e3" x="225" y="540" />
+		<entity schema="public" name="contact" color="b7c8e3" x="600" y="60" />
+		<entity schema="public" name="student" color="b7c8e3" x="390" y="45" />
+		<entity schema="public" name="professor" color="b7c8e3" x="240" y="270" />
+		<entity schema="public" name="exam" color="b7c8e3" x="450" y="330" />
+		<entity schema="public" name="note" color="b7c8e3" x="735" y="285" />
+		<browser id="Browse_14cbd4d6" name="professor_0" >
+			<browse_table schema="public" entity="student" x="10" y="10" width="451" height="347" />
+		</browser>
+	</layout>
+</project>
