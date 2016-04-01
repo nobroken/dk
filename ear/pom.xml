@@ -1,15 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>dattran</groupId>
-    <artifactId>dk</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>dk-ear</artifactId>
-  <name>ear</name>
-  <description>ear</description>
-  <packaging>ear</packaging>
-  <build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>dattran</groupId>
+		<artifactId>dk</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>dk-ear</artifactId>
+	<name>ear</name>
+	<description>ear</description>
+	<packaging>ear</packaging>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -31,10 +32,51 @@
 					</modules>
 				</configuration>
 			</plugin>
+			<!-- Glassfish plugin -->
+			<plugin>
+				<groupId>org.glassfish.maven.plugin</groupId>
+				<artifactId>maven-glassfish-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<id>gf-undeploy</id>
+						<goals>
+							<goal>undeploy</goal>
+						</goals>
+						<phase>clean</phase>
+					</execution>
+					<execution>
+						<id>gf-deploy</id>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						<phase>package</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<user>admin</user>
+					<adminPassword>admin</adminPassword>
+					<glassfishDirectory>${glassfish.directory}</glassfishDirectory>
+					<domainDirectory>${glassfish.directory}/glassfish/domains/</domainDirectory>
+					<domain>
+						<name>domain1</name>
+						<adminPort>4848</adminPort>
+						<httpPort>8080</httpPort>
+						<httpsPort>8443</httpsPort>
+					</domain>
+					<components>
+						<component>
+							<name>dk-ear-0.0.1-SNAPSHOT</name>
+							<artifact>target/dk-ear-0.0.1-SNAPSHOT.ear</artifact>
+						</component>
+					</components>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<glassfish.directory>/opt/glassfish4</glassfish.directory>
 	</properties>
 	<dependencies>
 		<dependency>

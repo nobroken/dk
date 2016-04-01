@@ -1,5 +1,6 @@
-package dattran.dk.web.view;
+package dattran.dk.web.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -13,7 +14,8 @@ import dattran.dk.ejb.interfaces.RoleServiceLocal;
 
 @ManagedBean
 @ViewScoped
-public class RoleView {
+public class RoleView implements Serializable {
+	private static final long serialVersionUID = 1L;
 	@EJB
 	private RoleServiceLocal roleService;
 	private RoleEntity currentRole;
