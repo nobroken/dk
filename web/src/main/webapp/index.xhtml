@@ -3,16 +3,20 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
+	<f:event listener="#{location.changeLocale}" type="preRenderView" />
 <h:head>
 	<title>Login</title>
 </h:head>
 <h:body>
-<h:form>
-	<h:outputText id="test" value="#{label.loginName}" />
-	<p:selectOneMenu id="language" value="#{language.language}">
-		<p:ajax event="change" listener="#{language.handleChange}" update="test" />
-		<f:selectItems value="#{language.languages}" />
-	</p:selectOneMenu>
+	<h:form>
+		<p:selectOneMenu id="language" value="#{location.currentLocale}">
+			<f:converter converterId="LocaleConverter" />
+			<p:ajax event="change" listener="#{location.changeLocale}"
+				update="test" />
+			<f:selectItems value="#{location.locales}" var="t"
+				itemLabel="#{t.displayLanguage}" itemValue="#{t}" />
+		</p:selectOneMenu>
+		<h:outputText id="test" value="#{label.loginName}" />
 	</h:form>
 </h:body>
 </html>

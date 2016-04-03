@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:composition>
+	<p:dialog id="RoleEditDlg" widgetVar="RoleEditDlg" modal="true" appendTo="@(body)">
+	<h:form id="editForm">
+	<h:panelGrid columns="2" cellpadding="5">
+	<p:outputLabel for="name" value="Name: " />
+	<p:inputText id="name" value="#{roleListView.entity.name}" />
+	<p:outputLabel for="description" value="Description: " />
+	<p:inputText id="description" value="#{roleListView.entity.description}" />
+	
+	<p:commandButton actionListener="#{roleListView.updateEntity}"
+                  value="Save" update=":listForm:listTable"
+                  oncomplete="handleSubmit(args,'RoleEditDlg');"/>
+    <p:commandButton value="Cancel" onclick="RoleEditDlg.hide()" />
+	</h:panelGrid>
+	</h:form>
+	</p:dialog>
+	</ui:composition>
+</html>

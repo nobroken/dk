@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Role</title>
+</h:head>
+<h:body>
+	<h:form id="listForm">
+		<p:panelGrid id="headBox" cellpadding="5">
+			<p:outputLabel for="name" value="Name: " />
+			<p:inputText id="name" value="#{roleListView.filter.name}" />
+
+			<p:outputLabel for="description" value="Description: " />
+			<p:inputText id="description"
+				value="#{roleListView.filter.description}" />
+
+			<p:commandButton value="Search" update="listTable"
+				actionListener="#{roleListView.search}" />
+		</p:panelGrid>
+		<p:dataTable id="listTable" var="entity"
+			value="#{roleListView.entities}">
+			<p:column headerText="Name">
+				<h:outputText value="#{entity.name}" />
+			</p:column>
+			<p:column headerText="Description">
+				<h:outputText value="#{entity.description}" />
+			</p:column>
+			<p:column>
+				<p:commandButton value="Delete" update="listTable" actionListener="#{roleListView.delete(entity)}" />
+			 </p:column>
+			 <p:column>
+			 	<p:commandButton id="editRole" value="Edit" update=":editForm" oncomplete="PF('RoleEditDlg').show()" actionListener="#{roleListView.changeEntity(entity)}" />
+			 </p:column>
+		</p:dataTable>
+	</h:form>
+	<ui:include src="RoleEdit.xhtml" />
+</h:body>
+</html>

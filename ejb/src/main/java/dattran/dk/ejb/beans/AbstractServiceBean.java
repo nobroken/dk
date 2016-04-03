@@ -6,14 +6,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import dattran.dk.domain.entities.EntityInterface;
-import dattran.dk.ejb.interfaces.ServiceInterface;
+import dattran.dk.ejb.interfaces.Service;
 
 public abstract class AbstractServiceBean<ID extends Serializable, Entity extends EntityInterface<ID>> implements
-		ServiceInterface<ID, Entity> {
+		Service<ID, Entity> {
 	@PersistenceContext(unitName = "dk-ejb")
 	protected EntityManager em;
-
-	protected abstract Class<Entity> getEntityClass();
 
 	@Override
 	public void delete(Entity entity) {
