@@ -8,25 +8,26 @@
 
 
 <ui:composition>
-	<p:dialog id="RoleEditDlg" widgetVar="RoleEditDialog" modal="true"
-		resizable="false" appendTo="@(body)" header="Edit Role">
-		<h:form id="RoleEditForm">
+	<p:dialog id="RoleCreateDlg" widgetVar="RoleCreateDialog" modal="true"
+		resizable="false" appendTo="@(body)" header="Create Role">
+		<h:form id="RoleCreateForm">
 			<h:panelGroup id="display">
 				<p:panelGrid columns="2"
 					rendered="#{rolesController.selected != null}">
 					<p:outputLabel value="Name: " for="name" />
 					<p:inputText id="name" value="#{rolesController.selected.name}"
-						title="Name" disabled="true"/>
+						title="Name" required="true"
+						requiredMessage="Name cannot be empty" />
 
 					<p:outputLabel value="Description: " for="description" />
 					<p:inputText id="description"
 						value="#{rolesController.selected.description}"
 						title="Description" />
 				</p:panelGrid>
-				<p:commandButton actionListener="#{rolesController.edit}"
+				<p:commandButton actionListener="#{rolesController.create}"
 					value="Save" update="display,:RoleListForm:dataList,:growl"
-					onclick="handleSubmit(args,'RoleEditDialog');" />
-				<p:commandButton value="Cancel" onclick="RoleEditDialog.hide()" />
+					onclick="handleSubmit(args,'RoleCreateDialog');" />
+				<p:commandButton value="Cancel" onclick="RoleCreateDialog.hide()" />
 			</h:panelGroup>
 		</h:form>
 	</p:dialog>

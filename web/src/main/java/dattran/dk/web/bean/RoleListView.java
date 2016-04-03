@@ -65,6 +65,5 @@ public class RoleListView {
 
 	public void updateEntity() {
 		service.update(entity);
-		search();
 	}
 }
