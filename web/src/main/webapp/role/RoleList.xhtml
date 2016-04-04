@@ -9,6 +9,8 @@
 	<title>Role</title>
 </h:head>
 <h:body>
+<ui:composition template="../template/commonLayout.xhtml">
+<ui:define name="mainContent">
 	<p:growl id="growl" life="2000" />
 	<h:form id="RoleListForm">
 		<p:panel header="List of Roles">
@@ -55,5 +57,7 @@
 	<ui:include src="RoleEdit.xhtml" />
 	<ui:include src="RoleView.xhtml" />
 	<ui:include src="RoleDeleteConfirmation.xhtml" />
+	</ui:define>
+	</ui:composition>
 </h:body>
 </html>
