@@ -5,21 +5,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<title>Login</title>
-</h:head>
-<h:outputStylesheet name="css/dk.css" />
-<h:body>
-	<ui:include src="template/navigationbar.xhtml" />
-	<div id="CONTENTSIDE">
-	<div id="CONTENTSIDEindent">
+<ui:composition>
 	<div class="ContentSideSections">
-		<ui:insert name="mainContent">
-			<ui:include src="template/commonContent.xhtml" />
-		</ui:insert>
+	<span id="copyright">tranquydat@gmail.com , Copyright © 2016<br></br>All rights reserved.</span>
 	</div>
-	<ui:include src="template/footer.xhtml" />
-	</div>
-	</div>
-</h:body>
+</ui:composition>
 </html>

@@ -1,13 +1,17 @@
+body {
+	font-family: "exoregular", "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
 #MENUSIDE {
 	float: left;
 	background-color: #1B5269;;
 	border-right: 1px solid #151D21;
 	overflow: hidden;
-	width: 300px;
+	width: 200px;
 	position: fixed;
 }
 
-#MENUSIDEindent {
+#MENUSIDEident {
 	width: 100%;
 	height: auto;
 }
@@ -36,4 +40,29 @@
 	width: 30px;
 	height: auto;
 	float: left;
+}
+
+#CONTENTSIDE {
+	width: auto;
+	overflow: hidden;
+	z-index: 1;
+	margin-left: 200px; // same as width of menu
+	background-color: #EFF3F6;
+}
+
+#CONTENTSIDEindent {
+	width: 100%;
+	height: auto;
+}
+
+.ContentSideSections {
+	display: block;
+	border-bottom: 1px solid #BCC7CF;
+	padding: 30px;
+}
+
+#copyright {
+	color: #84939F;
+	font-size: 14px;
+	vertical-align: middle;
 }
