@@ -17,7 +17,7 @@ import javax.persistence.SequenceGenerator;
 public class PersonEntity implements EntityInterface<Integer> {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "peson_sequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_sequence")
 	private Integer id;
 	@Column(name = "first_name")
 	private String firstName;

@@ -6,9 +6,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 <ui:composition>
-	<p:dialog id="RoleDeleteConfirmationDialog"
-		widgetVar="RoleDeleteConfirmationDlg" modal="true" resizable="false"
-		appendTo="@(body)" header="Confirmation">
+	<p:dialog id="RoleDeleteConfirmationDlg"
+		widgetVar="RoleDeleteConfirmationDialog" modal="true"
+		resizable="false" appendTo="@(body)" header="Confirmation">
 		<h:form id="RoleDeleteConfirmationForm">
 			<h:panelGroup id="display">
 				<p:panelGrid columns="1">
@@ -17,9 +17,10 @@
 				<p:panelGrid columns="2">
 					<p:commandButton value="Ok"
 						actionListener="#{rolesController.destroy}"
-						update="display,:RoleListForm:dataList,:growl" onclick="RoleDeleteConfirmationDialog.hide()" />
+						update="display,:RoleListForm:dataList,:growl"
+						oncomplete="PF('RoleDeleteConfirmationDialog').hide()" />
 					<p:commandButton value="Cancel"
-						onclick="RoleDeleteConfirmationDialog.hide()" />
+						onclick="PF('RoleDeleteConfirmationDialog').hide()" />
 				</p:panelGrid>
 			</h:panelGroup>
 		</h:form>

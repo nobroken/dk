@@ -25,8 +25,8 @@
 				</p:panelGrid>
 				<p:commandButton actionListener="#{rolesController.edit}"
 					value="Save" update="display,:RoleListForm:dataList,:growl"
-					onclick="handleSubmit(args,'RoleEditDialog');" />
-				<p:commandButton value="Cancel" onclick="RoleEditDialog.hide()" />
+					oncomplete="PF('RoleEditDialog').hide()" />
+				<p:commandButton value="Cancel" onclick="PF('RoleEditDialog').hide()" />
 			</h:panelGroup>
 		</h:form>
 	</p:dialog>

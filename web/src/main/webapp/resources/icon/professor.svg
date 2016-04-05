@@ -1,49 +1,75 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="937px" height="937px" viewBox="0 0 937 937" style="enable-background:new 0 0 937 937;" xml:space="preserve">
-<g>
-	<path d="M513.1,360.85c5.601,0,11,0.9,16.2,2.4l97-118.9c6.2-7.6,17.7-9,25.2-2.6c7.3,6.1,8.3,17,2.2,24.4l-95.9,117.6
-		c6.5,9,10.4,20.101,10.4,32.101c0,22.3-13.4,41.6-32.5,50.199H912c13.8,0,25-11.199,25-25v-316.5c0-13.8-11.2-25-25-25H434
-		c-13.8,0-25,11.2-25,25v207.8l22.6,28.6h81.5V360.85z"/>
-	<circle cx="201.3" cy="121.85" r="102.4"/>
-	<g>
-		<path d="M306.3,892.55c0,13.801-11.2,25-25,25h-42c-13.8,0-25-11.199-25-25v-209.6c0-7.4-6-13.4-13.4-13.4l0,0
-			c-7.4,0-13.4,6-13.4,13.4v208.6c0,14.301-11.7,26-26,26h-41.1c-13.8,0-25-11.199-25-25l-0.2-506c0-6.8-5.5-12.399-12.4-12.399l0,0
-			c-6.8,0-12.4,5.5-12.4,12.399V581.15c0,13.8-11.2,25-25,25H25c-13.8,0-25-11.2-25-25v-266.8c0-31.7,25.7-57.3,57.3-57.3H285
-			c24.399,0,47.5,11.2,62.7,30.3l61.199,77.2l12.9,16.3c0,0,58,0,91.4,0.1c13.8,0,25,11.2,25,25v19.9c0,13.8-11.2,25-25,25H405
-			c-10.7,0-20.8-4.9-27.4-13.301l-45.6-58.6c-2.3-3-6-4.8-9.8-4.8H319.1c-6.8,0-12.399,5.5-12.399,12.399L306.3,892.55z"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Capa_1"
+   x="0px"
+   y="0px"
+   width="937px"
+   height="937px"
+   viewBox="0 0 937 937"
+   style="enable-background:new 0 0 937 937;"
+   xml:space="preserve"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="professor.svg"><metadata
+     id="metadata3615"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+     id="defs3613" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     id="namedview3611"
+     showgrid="false"
+     inkscape:zoom="0.25186766"
+     inkscape:cx="468.5"
+     inkscape:cy="468.5"
+     inkscape:window-x="3905"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Capa_1" /><g
+     id="g3571"
+     style="fill:#cccccc"><path
+       d="M513.1,360.85c5.601,0,11,0.9,16.2,2.4l97-118.9c6.2-7.6,17.7-9,25.2-2.6c7.3,6.1,8.3,17,2.2,24.4l-95.9,117.6   c6.5,9,10.4,20.101,10.4,32.101c0,22.3-13.4,41.6-32.5,50.199H912c13.8,0,25-11.199,25-25v-316.5c0-13.8-11.2-25-25-25H434   c-13.8,0-25,11.2-25,25v207.8l22.6,28.6h81.5V360.85z"
+       id="path3573"
+       style="fill:#cccccc" /><circle
+       cx="201.3"
+       cy="121.85"
+       r="102.4"
+       id="circle3575"
+       style="fill:#cccccc" /><g
+       id="g3577"
+       style="fill:#cccccc"><path
+         d="M306.3,892.55c0,13.801-11.2,25-25,25h-42c-13.8,0-25-11.199-25-25v-209.6c0-7.4-6-13.4-13.4-13.4l0,0    c-7.4,0-13.4,6-13.4,13.4v208.6c0,14.301-11.7,26-26,26h-41.1c-13.8,0-25-11.199-25-25l-0.2-506c0-6.8-5.5-12.399-12.4-12.399l0,0    c-6.8,0-12.4,5.5-12.4,12.399V581.15c0,13.8-11.2,25-25,25H25c-13.8,0-25-11.2-25-25v-266.8c0-31.7,25.7-57.3,57.3-57.3H285    c24.399,0,47.5,11.2,62.7,30.3l61.199,77.2l12.9,16.3c0,0,58,0,91.4,0.1c13.8,0,25,11.2,25,25v19.9c0,13.8-11.2,25-25,25H405    c-10.7,0-20.8-4.9-27.4-13.301l-45.6-58.6c-2.3-3-6-4.8-9.8-4.8H319.1c-6.8,0-12.399,5.5-12.399,12.399L306.3,892.55z"
+         id="path3579"
+         style="fill:#cccccc" /></g></g><g
+     id="g3581" /><g
+     id="g3583" /><g
+     id="g3585" /><g
+     id="g3587" /><g
+     id="g3589" /><g
+     id="g3591" /><g
+     id="g3593" /><g
+     id="g3595" /><g
+     id="g3597" /><g
+     id="g3599" /><g
+     id="g3601" /><g
+     id="g3603" /><g
+     id="g3605" /><g
+     id="g3607" /><g
+     id="g3609" /></svg>
