@@ -1,8 +1,13 @@
 package dattran.dk.domain.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import dattran.dk.domain.enums.RoleType;
 
 /**
  * The persistent class for the role database table.
@@ -10,23 +15,25 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "\"role\"")
-public class RoleEntity implements EntityInterface<String> {
+public class RoleEntity implements EntityInterface<RoleType> {
 	private static final long serialVersionUID = 1L;
 	@Id
-	private String name;
+	@Column(name = "role_type")
+	@Enumerated(EnumType.STRING)
+	private RoleType roleType;
 	private String description;
 
 	@Override
-	public String getId() {
-		return name;
+	public RoleType getId() {
+		return roleType;
 	}
 
-	public String getName() {
-		return name;
+	public RoleType getRoleType() {
+		return roleType;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setRoleType(RoleType roleType) {
+		this.roleType = roleType;
 	}
 
 	public String getDescription() {
@@ -42,7 +49,7 @@ public class RoleEntity implements EntityInterface<String> {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((roleType == null) ? 0 : roleType.hashCode());
 		return result;
 	}
 
@@ -60,10 +67,10 @@ public class RoleEntity implements EntityInterface<String> {
 				return false;
 		} else if (!description.equals(other.description))
 			return false;
-		if (name == null) {
-			if (other.name != null)
+		if (roleType == null) {
+			if (other.roleType != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!roleType.equals(other.roleType))
 			return false;
 		return true;
 	}

@@ -1,17 +1,18 @@
 package dattran.dk.ejb.filters;
 
+import dattran.dk.domain.enums.RoleType;
 
 public class RoleFilter implements Filter {
 	private static final long serialVersionUID = 1L;
-	private String name;
+	private RoleType roleType;
 	private String description;
 
-	public String getName() {
-		return name;
+	public RoleType getRoleType() {
+		return roleType;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setRoleType(RoleType roleType) {
+		this.roleType = roleType;
 	}
 
 	public String getDescription() {

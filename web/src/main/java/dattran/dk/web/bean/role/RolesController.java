@@ -1,5 +1,6 @@
-package dattran.dk.web.bean;
+package dattran.dk.web.bean.role;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -10,6 +11,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import dattran.dk.domain.entities.RoleEntity;
+import dattran.dk.domain.enums.RoleType;
 import dattran.dk.ejb.interfaces.RoleServiceLocal;
 
 @ManagedBean
@@ -27,8 +29,6 @@ public class RolesController {
 	@PostConstruct
 	public void init() {
 		items = service.find(null);
-		if (!items.isEmpty())
-			selected = items.get(0);
 	}
 
 	public RoleEntity getSelected() {
@@ -86,5 +86,9 @@ public class RolesController {
 	private void addSuccessMessage(String msg) {
 		FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg);
 		FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
+	}
+
+	public List<RoleType> getRoleTypes() {
+		return Arrays.asList(RoleType.values());
 	}
 }

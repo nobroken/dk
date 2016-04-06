@@ -13,7 +13,7 @@
 <ui:define name="mainContent">
 	<p:growl id="growl" life="2000" />
 	<h:form id="RoleListForm">
-		<p:panel header="List of Roles">
+		
 			<p:dataTable id="dataList" var="item" rowKey="#{item.id}"
 				value="#{rolesController.items}" selectionMode="single"
 				selection="#{rolesController.selected}">
@@ -24,9 +24,9 @@
 
 				<p:column>
 					<f:facet name="header">
-						<h:outputText value="Name" />
+						<h:outputText value="Role" />
 					</f:facet>
-					<h:outputText value="#{item.name}" />
+					<h:outputText value="#{item.roleType.role}" />
 				</p:column>
 				<p:column>
 					<f:facet name="header">
@@ -51,7 +51,7 @@
 				</f:facet>
 
 			</p:dataTable>
-		</p:panel>
+		
 	</h:form>
 	<ui:include src="RoleCreate.xhtml" />
 	<ui:include src="RoleEdit.xhtml" />

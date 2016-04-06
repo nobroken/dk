@@ -4,6 +4,8 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import dattran.dk.domain.embeddables.NotePK;
+
 public class NoteEntity implements EntityInterface<NotePK> {
 	private static final long serialVersionUID = 1L;
 	@EmbeddedId

@@ -8,6 +8,7 @@ import com.querydsl.jpa.impl.JPAQuery;
 
 import dattran.dk.domain.entities.QRoleEntity;
 import dattran.dk.domain.entities.RoleEntity;
+import dattran.dk.domain.enums.RoleType;
 import dattran.dk.ejb.filters.Filter;
 import dattran.dk.ejb.filters.RoleFilter;
 import dattran.dk.ejb.interfaces.RoleServiceLocal;
@@ -17,7 +18,7 @@ import dattran.dk.ejb.interfaces.RoleServiceRemote;
  * Session Bean implementation class RoleServiceBean
  */
 @Stateless(name = "RoleService", mappedName = "RoleService")
-public class RoleServiceBean extends AbstractServiceBean<String, RoleEntity> implements RoleServiceRemote,
+public class RoleServiceBean extends AbstractServiceBean<RoleType, RoleEntity> implements RoleServiceRemote,
 		RoleServiceLocal {
 
 	@Override
@@ -32,8 +33,8 @@ public class RoleServiceBean extends AbstractServiceBean<String, RoleEntity> imp
 		JPAQuery<RoleEntity> query = new JPAQuery<RoleEntity>(em);
 		query.from(role);
 		if (roleFilter != null) {
-			if (roleFilter.getName() != null) {
-				query.where(role.name.toUpperCase().startsWith(roleFilter.getName().toUpperCase()));
+			if (roleFilter.getRoleType() != null) {
+				query.where(role.roleType.eq(roleFilter.getRoleType()));
 			}
 			if (roleFilter.getDescription() != null) {
 				query.where(role.description.toUpperCase().contains(roleFilter.getDescription().toUpperCase()));
@@ -41,5 +42,4 @@ public class RoleServiceBean extends AbstractServiceBean<String, RoleEntity> imp
 		}
 		return query.fetch();
 	}
-
 }
