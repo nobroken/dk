@@ -12,9 +12,9 @@
 			<h:panelGroup id="display">
 				<p:panelGrid columns="2" >
 					<h:outputText value="Role" />
-					<h:outputText value="#{rolesController.selected.roleType.role}" title="Role" />
+					<h:outputText value="#{roleController.selected.roleType.role}" title="Role" />
 					<h:outputText value="Description" />
-					<h:outputText value="#{rolesController.selected.description}" title="Description" />
+					<h:outputText value="#{roleController.selected.description}" title="Description" />
 				</p:panelGrid>
 				<p:commandButton value="Close" onclick="RoleViewDialog.hide()" />
 			</h:panelGroup>

@@ -18,4 +18,6 @@ public interface Service<ID extends Serializable, Entity extends EntityInterface
 	Class<Entity> getEntityClass();
 
 	List<Entity> find(Filter filter);
+
+	Entity getNew();
 }

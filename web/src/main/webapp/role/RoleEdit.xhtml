@@ -13,19 +13,19 @@
 		<h:form id="RoleEditForm">
 			<h:panelGroup id="display">
 				<p:panelGrid columns="2"
-					rendered="#{rolesController.selected != null}">
+					rendered="#{roleController.selected != null}">
 					<p:outputLabel value="Role: " for="role" />
-					<p:selectOneMenu id="role" value="#{rolesController.selected.roleType}" required="true">
+					<p:selectOneMenu id="role" value="#{roleController.selected.roleType}" required="true">
 					<f:selectItem itemLabel="Select One" itemValue=""/>
-					<f:selectItems value="#{rolesController.roleTypes}" var="roleType" itemLabel="#{roleType.role}" itemValue="#{roleType}" />
+					<f:selectItems value="#{roleController.roleTypes}" var="roleType" itemLabel="#{roleType.role}" itemValue="#{roleType}" />
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Description: " for="description" />
 					<p:inputText id="description"
-						value="#{rolesController.selected.description}"
+						value="#{roleController.selected.description}"
 						title="Description" />
 				</p:panelGrid>
-				<p:commandButton actionListener="#{rolesController.edit}"
+				<p:commandButton actionListener="#{roleController.edit}"
 					value="Save" update="display,:RoleListForm:dataList,:growl"
 					oncomplete="PF('RoleEditDialog').hide()" />
 				<p:commandButton value="Cancel" onclick="PF('RoleEditDialog').hide()" />

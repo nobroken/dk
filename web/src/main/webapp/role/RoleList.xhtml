@@ -15,8 +15,8 @@
 	<h:form id="RoleListForm">
 		
 			<p:dataTable id="dataList" var="item" rowKey="#{item.id}"
-				value="#{rolesController.items}" selectionMode="single"
-				selection="#{rolesController.selected}">
+				value="#{roleController.items}" selectionMode="single"
+				selection="#{roleController.selected}">
 				<p:ajax event="rowSelect"
 					update="createButton viewButton editButton deleteButton" />
 				<p:ajax event="rowUnselect"
@@ -37,17 +37,17 @@
 
 				<f:facet name="footer">
 					<p:commandButton id="createButton" icon="ui-icon-plus"
-						value="Create" actionListener="#{rolesController.prepareCreate}"
+						value="Create" actionListener="#{roleController.prepareCreate}"
 						update=":RoleCreateForm"
 						oncomplete="PF('RoleCreateDialog').show()" />
 					<p:commandButton id="viewButton" icon="ui-icon-search" value="View"
 						update=":RoleViewForm" oncomplete="PF('RoleViewDialog').show()"
-						disabled="#{empty rolesController.selected}" />
+						disabled="#{empty roleController.selected}" />
 					<p:commandButton id="editButton" icon="ui-icon-pencil" value="Edit"
 						update=":RoleEditForm" oncomplete="PF('RoleEditDialog').show()"
-						disabled="#{empty rolesController.selected}" />
+						disabled="#{empty roleController.selected}" />
 					<p:commandButton id="deleteButton" icon="ui-icon-trash"
-						value="Delete" disabled="#{empty rolesController.selected}" onclick="PF('RoleDeleteConfirmationDialog').show();" />
+						value="Delete" disabled="#{empty roleController.selected}" onclick="PF('RoleDeleteConfirmationDialog').show();" />
 				</f:facet>
 
 			</p:dataTable>

@@ -33,4 +33,15 @@ public abstract class AbstractServiceBean<ID extends Serializable, Entity extend
 	public Entity get(ID id) {
 		return em.find(getEntityClass(), id);
 	}
+
+	@Override
+	public Entity getNew() {
+		try {
+			return getEntityClass().newInstance();
+		} catch (InstantiationException | IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
